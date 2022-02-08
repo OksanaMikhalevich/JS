@@ -1,0 +1,16 @@
+img {
+    width: 120px;
+}
+
+.product_card {
+    display: flex;
+}
+
+.product_title {
+    color: red;
+    text-align: center;
+}
+
+.product_image {
+    width: 300px;
+}
