@@ -62,10 +62,19 @@ stringToArray(`Happy Valentine Day`);
 // Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
 
 let delete_characters = (str, index) => {
-    let substring = str.substring(0, index);
-    console.log(substring);
+    let split = str.split(' ');
+
+    arr = [];
+    for (let i = 0; i < split.length; i++) {
+        if (split[i].length === index){
+            arr.push(split[i]);
+        }
+    }
+
+    return arr.join();
 }
-delete_characters(`Каждый охотник желает знать`, 5);
+
+console.log(delete_characters(`Каждый охотник желает знать`, 6));
 
 // Part 7
 //  Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
@@ -78,6 +87,7 @@ let insert_dash = (string) => {
         .replaceAll(' ', '-');
     console.log(toUpperCaseReplace);
 }
+
 insert_dash(`HTML JavaScript PHP`);
 
 // Part 8
@@ -86,10 +96,28 @@ insert_dash(`HTML JavaScript PHP`);
 let string = (str) => {
     console.log(str[0].toUpperCase() + str.slice(1));
 }
-string(`каждый охотник желает знать`)
+
+string(`каждый охотник желает знать`);
 
 // Part 9
 // Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
 
+let capitalize = (str) => {
+    let toUpperCaseModification = str.split(' ').map(volume => volume.charAt(0).toUpperCase() + volume.slice(1));
+    return toUpperCaseModification.join().replaceAll(',', ' ');
+}
 
+console.log(capitalize(`каждый охотник желает знать`));
 
+let capitalize1 = (str) => {
+    let split = str.split(' ');
+
+    arr = [];
+    for (let splitElement of split) {
+        arr.push(splitElement.charAt(0).toUpperCase() + splitElement.slice(1));
+    }
+
+    return arr.join().replaceAll(',',' ');
+}
+
+console.log(capitalize1(`каждый охотник желает знать`))

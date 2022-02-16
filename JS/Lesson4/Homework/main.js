@@ -29,7 +29,7 @@ console.log(square3(2, 4));
 // Створити функцію яка приймає масив та виводить кожен його елемент
 
 function arrayCreator(a, b, c, d, e, f) {
-    let arr = [a, b, c, d, e, f];
+    arr = [a, b, c, d, e, f];
     return arr;
 }
 
